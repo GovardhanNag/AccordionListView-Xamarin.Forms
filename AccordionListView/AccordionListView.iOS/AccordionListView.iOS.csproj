@@ -157,4 +157,13 @@
       <Name>AccordionListView</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\uparrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\downarrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rightarrow.png" />
+  </ItemGroup>
 </Project>

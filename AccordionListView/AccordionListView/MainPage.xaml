@@ -2,10 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:AccordionListView"
-             x:Class="AccordionListView.MainPage" Title="Accordion">
+             xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="AccordionListView.MainPage"  iOS:Page.UseSafeArea="True" Title="Accordion" NavigationPage.HasNavigationBar="True">
 
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding Countries}" ItemTapped="Handle_ItemTapped" SeparatorVisibility="None" HasUnevenRows="true">
+        <ListView ItemsSource="{Binding Countries}" ItemTapped="Handle_ItemTapped" SeparatorVisibility="None" HasUnevenRows="true" Margin="2">
             <ListView.Header>
                 <Grid Padding="15"  BackgroundColor="LightSeaGreen">
                     <Label Text="Country Name" FontSize="16" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"/>
@@ -28,10 +29,10 @@
                                     </Image.GestureRecognizers>
                                 </Image>
                             </Grid>
-                            <Grid Margin="10,0,0,0" IsVisible="{Binding IsChildrenVisible}" HeightRequest="{Binding ChildrenRowHeightRequest}" BackgroundColor="LightGray">
+                            <Grid Margin="10,0,0,0" IsVisible="{Binding IsChildrenVisible}" HeightRequest="{Binding ChildrenRowHeightRequest}" BackgroundColor="Transparent">
                                 <ListView ItemsSource="{Binding Cities}" SeparatorVisibility="None" HasUnevenRows="True">
                                     <ListView.Header>
-                                        <Grid Margin="5,0,0,0" Padding="15" BackgroundColor="LightSalmon">
+                                        <Grid Padding="15" BackgroundColor="LightSalmon">
                                             <Label Text="City Name" FontSize="14" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"/>
                                             <Label Text="City Code" FontSize="14" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>
                                         </Grid>

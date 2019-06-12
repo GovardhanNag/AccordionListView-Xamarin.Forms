@@ -36,15 +36,16 @@ namespace AccordionListView
                 await image.RotateTo(180);
                 Grid grid = image.Parent as Grid;
                 Label label = grid.Children[0] as Label;
-                if (oldCountry != label.Text)
+                string newCountry = label.Text;
+                if (oldCountry != newCountry)
                 {
                     viewModel.ShowCities(oldCountry);
-                    viewModel.ShowCities(label.Text);
-                    oldCountry = label.Text;
+                    viewModel.ShowCities(newCountry);
+                    oldCountry = newCountry;
                 }
                 else
                 {
-                    viewModel.ShowCities(label.Text);
+                    viewModel.ShowCities(newCountry);
                     oldCountry = null;
                 }
             }

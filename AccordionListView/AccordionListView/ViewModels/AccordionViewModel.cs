@@ -49,23 +49,23 @@ namespace AccordionListView.ViewModels
 
             CustomObservableCollection<City> USACities = new CustomObservableCollection<City>()
             {
-                new City(){ CityName = "Washington DC", CityCode = "WDC", IsCChildrenVisible = false, States=WDCStates },
-                new City(){ CityName = "New York", CityCode = "NY", IsCChildrenVisible = false, States=NYStates  },
-                new City(){ CityName = "Los Angeles", CityCode = "LA", IsCChildrenVisible = false, States=SGStates }
+                new City(){ CityName = "Washington DC", CityCode = "202", IsCChildrenVisible = false, States=WDCStates },
+                new City(){ CityName = "New York", CityCode = "718", IsCChildrenVisible = false, States=NYStates  },
+                new City(){ CityName = "Los Angeles", CityCode = "231", IsCChildrenVisible = false, States=SGStates }
             };
 
             CustomObservableCollection<City> ChinaCities = new CustomObservableCollection<City>()
             {
-                new City(){ CityName = "Beijing", CityCode = "BJ", IsCChildrenVisible = false, States=BJStates  },
-                new City(){ CityName = "Shanghai", CityCode = "SG", IsCChildrenVisible = false, States=SGStates  },
-                new City(){ CityName = "Shenzhen", CityCode = "SZ", IsCChildrenVisible = false, }
+                new City(){ CityName = "Beijing", CityCode = "10", IsCChildrenVisible = false, States=BJStates  },
+                new City(){ CityName = "Shanghai", CityCode = "21", IsCChildrenVisible = false, States=SGStates  },
+                new City(){ CityName = "Shenyang", CityCode = "24", IsCChildrenVisible = false, }
             };
 
             CustomObservableCollection<City> RussiaCities = new CustomObservableCollection<City>()
             {
-                new City(){ CityName = "Moscow", CityCode = "MC", IsCChildrenVisible = false, States=SGStates },
-                new City(){ CityName = "St. Peterburg", CityCode = "PB", IsCChildrenVisible = false, States=SGStates },
-                new City(){ CityName = "Kazan", CityCode = "KZ", IsCChildrenVisible = false, }
+                new City(){ CityName = "Moscow", CityCode = "495", IsCChildrenVisible = false, States=SGStates },
+                new City(){ CityName = "St. Peterburg", CityCode = "727", IsCChildrenVisible = false, States=SGStates },
+                new City(){ CityName = "Kazan", CityCode = "843", IsCChildrenVisible = false, }
             };
 
             countries = new CustomObservableCollection<Country>()
