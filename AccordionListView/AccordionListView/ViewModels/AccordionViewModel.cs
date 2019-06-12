@@ -19,64 +19,71 @@ namespace AccordionListView.ViewModels
 
         public AccordionViewModel()
         {
-            ObservableCollection<State> WDCStates = new ObservableCollection<State>()
+            ObservableCollection<City> WDCity = new ObservableCollection<City>()
             {
-                new State(){ StateName = "Washington States", StateCode = "WDC" },
-                new State(){ StateName = "New States", StateCode = "NY" },
-                new State(){ StateName = "Los States", StateCode = "LA" }
+                new City(){ CityName = "Barberton", CityCode = "330" },
+                new City(){ CityName = "Kent", CityCode = "253" },
+                new City(){ CityName = "Woodland", CityCode = "530" }
             };
 
-            ObservableCollection<State> NYStates = new ObservableCollection<State>()
+            ObservableCollection<City> NYCity = new ObservableCollection<City>()
             {
-                new State(){ StateName = "Washington States", StateCode = "WDC" },
-                new State(){ StateName = "New States", StateCode = "NY" },
-                new State(){ StateName = "Los States", StateCode = "LA" }
+                new City(){ CityName = "Adams", CityCode = "608" },
+                new City(){ CityName = "Otego", CityCode = "607" },
+                new City(){ CityName = "Milton", CityCode = "289" }
+            };
+            
+            ObservableCollection<City> KECity = new ObservableCollection<City>()
+            {
+                new City(){ CityName = "Albany", CityCode = "518" },
+                new City(){ CityName = "Augusta", CityCode = "762" },
+                new City(){ CityName = "Benton", CityCode = "501" }
             };
 
-            ObservableCollection<State> BJStates = new ObservableCollection<State>()
+            ObservableCollection<City> TBCity = new ObservableCollection<City>()
             {
-                new State(){ StateName = "States DC", StateCode = "WDC" },
-                new State(){ StateName = "States York",StateCode = "NY" },
-                new State(){ StateName = "States Angeles", StateCode = "LA" }
+                new City(){ CityName = "Baiba", CityCode = "123" },
+                new City(){ CityName = "Chaba",CityCode = "121" },
+                new City(){ CityName = "Lian", CityCode = "231" }
             };
 
-            ObservableCollection<State> SGStates = new ObservableCollection<State>()
+            ObservableCollection<City> XJCity = new ObservableCollection<City>()
             {
-                new State(){ StateName = "States DC", StateCode = "WDC" },
-                new State(){ StateName = "States York",StateCode = "NY" },
-                new State(){ StateName = "States Angeles", StateCode = "LA" }
+                new City(){ CityName = "Urumqi", CityCode = "991" },
+                new City(){ CityName = "Karamay",CityCode = "990" },
+                new City(){ CityName = "Tumxuk", CityCode = "998" }
             };
 
-            CustomObservableCollection<City> USACities = new CustomObservableCollection<City>()
+            CustomObservableCollection<State> USAStates = new CustomObservableCollection<State>()
             {
-                new City(){ CityName = "Washington DC", CityCode = "202", IsCChildrenVisible = false, States=WDCStates },
-                new City(){ CityName = "New York", CityCode = "718", IsCChildrenVisible = false, States=NYStates  },
-                new City(){ CityName = "Los Angeles", CityCode = "231", IsCChildrenVisible = false, States=SGStates }
+                new State(){ StateName = "Washington", StateCode = "206", IsCChildrenVisible = false, Cities=WDCity },
+                new State(){ StateName = "New York", StateCode = "718", IsCChildrenVisible = false, Cities=NYCity  },
+                new State(){ StateName = "Kentucky", StateCode = "859", IsCChildrenVisible = false, Cities=KECity }
             };
 
-            CustomObservableCollection<City> ChinaCities = new CustomObservableCollection<City>()
+            CustomObservableCollection<State> ChinaStates = new CustomObservableCollection<State>()
             {
-                new City(){ CityName = "Beijing", CityCode = "10", IsCChildrenVisible = false, States=BJStates  },
-                new City(){ CityName = "Shanghai", CityCode = "21", IsCChildrenVisible = false, States=SGStates  },
-                new City(){ CityName = "Shenyang", CityCode = "24", IsCChildrenVisible = false, }
+                new State(){ StateName = "Tibet", StateCode = "86", IsCChildrenVisible = false, Cities =TBCity  },
+                new State(){ StateName = "Xinjiang", StateCode = "993", IsCChildrenVisible = false, Cities=XJCity  },
+                new State(){ StateName = "Shanghai", StateCode = "21", IsCChildrenVisible = false, }
             };
 
-            CustomObservableCollection<City> RussiaCities = new CustomObservableCollection<City>()
+            CustomObservableCollection<State> RussiaStates = new CustomObservableCollection<State>()
             {
-                new City(){ CityName = "Moscow", CityCode = "495", IsCChildrenVisible = false, States=SGStates },
-                new City(){ CityName = "St. Peterburg", CityCode = "727", IsCChildrenVisible = false, States=SGStates },
-                new City(){ CityName = "Kazan", CityCode = "843", IsCChildrenVisible = false, }
+                new State(){ StateName = "Moscow", StateCode = "495", IsCChildrenVisible = false },
+                new State(){ StateName = "St. Peterburg", StateCode = "727", IsCChildrenVisible = false },
+                new State(){ StateName = "Kazan", StateCode = "843", IsCChildrenVisible = false, }
             };
 
             countries = new CustomObservableCollection<Country>()
             {
-                new Country(){ CountryName = "United States", CountryCode ="USA", IsChildrenVisible = false, Cities = USACities },
-                new Country(){ CountryName = "China", CountryCode ="CN", IsChildrenVisible = false, Cities = ChinaCities },
-                new Country(){ CountryName = "Russia", CountryCode ="RUS", IsChildrenVisible = false, Cities = RussiaCities },
+                new Country(){ CountryName = "United States", CountryCode ="USA", IsChildrenVisible = false, States = USAStates },
+                new Country(){ CountryName = "China", CountryCode ="CN", IsChildrenVisible = false, States = ChinaStates },
+                new Country(){ CountryName = "Russia", CountryCode ="RUS", IsChildrenVisible = false, States = RussiaStates },
             };
         }
 
-        public void ShowCities(string countryName)
+        public void ShowStates(string countryName)
         {
             if (countryName != null)
             {
@@ -87,17 +94,17 @@ namespace AccordionListView.ViewModels
             }
         }
 
-        public void ShowStates(City city)
+        public void ShowCities(State state)
         {
-            if (city != null && city.States != null)
+            if (state != null && state.Cities != null)
             {
-                Country country = Countries.SingleOrDefault(c => c.Cities.SingleOrDefault(ci => ci.CityName == city.CityName) == city);
-                city.IsCChildrenVisible = !city.IsCChildrenVisible;
-                if (city.IsCChildrenVisible)
-                    country.ChildrenRowHeightRequest = city.States.Count;
+                Country country = Countries.SingleOrDefault(c => c.States.SingleOrDefault(ci => ci.StateName == state.StateName) == state);
+                state.IsCChildrenVisible = !state.IsCChildrenVisible;
+                if (state.IsCChildrenVisible)
+                    country.ChildrenRowHeightRequest = state.Cities.Count;
                 else
                     country.ChildrenRowHeightRequest = 0;
-                //country.Cities.SingleOrDefault(ci => ci.CityName == city.CityName).IsCChildrenVisible=!city.IsCChildrenVisible;
+                //country.Cities.SingleOrDefault(ci => ci.StateName == city.StateName).IsCChildrenVisible=!city.IsCChildrenVisible;
                 //country.IsChildrenVisible = !country.IsChildrenVisible;
                 Countries.ReportItemChange(country);
             }

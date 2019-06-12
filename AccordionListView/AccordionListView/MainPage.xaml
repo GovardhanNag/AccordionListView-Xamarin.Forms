@@ -30,20 +30,20 @@
                                 </Image>
                             </Grid>
                             <Grid Margin="10,0,0,0" IsVisible="{Binding IsChildrenVisible}" HeightRequest="{Binding ChildrenRowHeightRequest}" BackgroundColor="Transparent">
-                                <ListView ItemsSource="{Binding Cities}" SeparatorVisibility="None" HasUnevenRows="True">
+                                <ListView ItemsSource="{Binding States}" SeparatorVisibility="None" HasUnevenRows="True">
                                     <ListView.Header>
-                                        <Grid Padding="15" BackgroundColor="LightSalmon">
-                                            <Label Text="City Name" FontSize="14" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"/>
-                                            <Label Text="City Code" FontSize="14" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                        <Grid Padding="15" BackgroundColor="LightCoral">
+                                            <Label Text="State Name" FontSize="14" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"/>
+                                            <Label Text="Area Code" FontSize="14" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>
                                         </Grid>
                                     </ListView.Header>
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
                                             <ViewCell>
                                                 <StackLayout Orientation="Vertical" Margin="0" BackgroundColor="Transparent">
-                                                    <Grid Padding="15" BackgroundColor="LightSkyBlue">
-                                                        <Label Text="{Binding CityName}" FontSize="14" VerticalOptions="Center" HorizontalOptions="Start"/>
-                                                        <Label Text="{Binding CityCode}" FontSize="14" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                                    <Grid Padding="15" BackgroundColor="#F7BFBF">
+                                                        <Label Text="{Binding StateName}" FontSize="14" VerticalOptions="Center" HorizontalOptions="Start"/>
+                                                        <Label Text="{Binding StateCode}" FontSize="14" VerticalOptions="Center" HorizontalOptions="Center"/>
                                                         <Image Source="{Binding ArrowIconSource}" HeightRequest="12" WidthRequest="12" VerticalOptions="Center" 
                                                                 HorizontalOptions="End">
                                                             <Image.GestureRecognizers>
@@ -52,11 +52,11 @@
                                                         </Image>
                                                     </Grid>
                                                     <Grid Margin="10,0,0,0" IsVisible="{Binding IsCChildrenVisible}" HeightRequest="{Binding ChildrenRowHeightRequest}">
-                                                        <ListView ItemsSource="{Binding States}" SeparatorVisibility="None" HasUnevenRows="True">
+                                                        <ListView ItemsSource="{Binding Cities}" SeparatorVisibility="None" HasUnevenRows="True">
                                                             <ListView.Header>
-                                                                <Grid Padding="15" BackgroundColor="LightCoral">
-                                                                    <Label Text="State Name" FontAttributes="Bold" FontSize="14" VerticalOptions="Center" HorizontalOptions="Start"/>
-                                                                    <Label Text="State Code" FontAttributes="Bold" FontSize="14" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                                                <Grid Padding="15" BackgroundColor="DeepSkyBlue">
+                                                                    <Label Text="City Name" FontAttributes="Bold" FontSize="14" VerticalOptions="Center" HorizontalOptions="Start"/>
+                                                                    <Label Text="Area Code" FontAttributes="Bold" FontSize="14" VerticalOptions="Center" HorizontalOptions="Center"/>
                                                                 </Grid>
                                                             </ListView.Header>
                                                             <ListView.ItemTemplate>
@@ -64,8 +64,8 @@
                                                                     <ViewCell>
                                                                         <StackLayout Orientation="Vertical" Margin="0" BackgroundColor="Transparent">
                                                                             <Grid Padding="15" BackgroundColor="LightBlue">
-                                                                                <Label Text="{Binding StateName}" FontSize="14" VerticalOptions="Center" HorizontalOptions="Start"/>
-                                                                                <Label Text="{Binding StateCode}" FontSize="14" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                                                                <Label Text="{Binding CityName}" FontSize="14" VerticalOptions="Center" HorizontalOptions="Start"/>
+                                                                                <Label Text="{Binding CityCode}" FontSize="14" VerticalOptions="Center" HorizontalOptions="Center"/>
                                                                                 <Image Source="rightarrow.png" HeightRequest="12" WidthRequest="12" VerticalOptions="Center" 
                                                                                         HorizontalOptions="End"/>
                                                                             </Grid>

@@ -7,16 +7,16 @@ using System.Text;
 
 namespace AccordionListView.Models
 {
-    public class City : BaseViewModel
+    public class State : BaseViewModel
     {
-        public string CityName { get; set; }
-        public string CityCode { get; set; }
+        public string StateName { get; set; }
+        public string StateCode { get; set; }
         public bool IsCChildrenVisible { get; set; }
         public string ArrowIconSource
         {
             get
             {
-                if (States != null)
+                if (Cities != null)
                 {
                     if (IsCChildrenVisible)
                         return "uparrow.png";
@@ -27,15 +27,15 @@ namespace AccordionListView.Models
                     return "rightarrow.png";
             }
         }
-        public ObservableCollection<State> States { get; set; }
+        public ObservableCollection<City> Cities { get; set; }
         private int _ChildrenRowHeightRequest;
         public int ChildrenRowHeightRequest
         {
             get
             {
-                if (States != null)
+                if (Cities != null)
                 {
-                    _ChildrenRowHeightRequest = States.Count * 65;
+                    _ChildrenRowHeightRequest = Cities.Count * 65;
                     return _ChildrenRowHeightRequest;
                 }
                 else
@@ -45,10 +45,10 @@ namespace AccordionListView.Models
         }
     }
 
-    public class State
+    public class City
     {
-        public string StateName { get; set; }
-        public string StateCode { get; set; }
+        public string CityName { get; set; }
+        public string CityCode { get; set; }
     }
 
     public class Country : BaseViewModel
@@ -60,7 +60,7 @@ namespace AccordionListView.Models
         {
             get
             {
-                if (Cities != null)
+                if (States != null)
                 {
                     if (IsChildrenVisible)
                         return "uparrow.png";
@@ -71,11 +71,11 @@ namespace AccordionListView.Models
                     return "rightarrow.png";
             }
         }
-        private CustomObservableCollection<City> cities;
-        public CustomObservableCollection<City> Cities
+        private CustomObservableCollection<State> states;
+        public CustomObservableCollection<State> States
         {
-            get => cities;
-            set => SetProperty(ref cities, value);
+            get => states;
+            set => SetProperty(ref states, value);
         }
 
         private int _ChildrenRowHeightRequest;
@@ -83,9 +83,9 @@ namespace AccordionListView.Models
         {
             get
             {
-                if (Cities != null)
+                if (States != null)
                 {
-                    _ChildrenRowHeightRequest = Cities.Count * 65 + (_ChildrenRowHeightRequest * 65);
+                    _ChildrenRowHeightRequest = States.Count * 65 + (_ChildrenRowHeightRequest * 65);
                     return _ChildrenRowHeightRequest;
                 }
                 else

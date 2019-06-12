@@ -12,7 +12,7 @@ namespace AccordionListView
     public partial class MainPage : ContentPage
     {
         public string oldCountry { get; set; }
-        public City oldCity { get; set; }
+        public State oldState { get; set; }
         AccordionViewModel viewModel;
         public MainPage()
         {
@@ -39,13 +39,13 @@ namespace AccordionListView
                 string newCountry = label.Text;
                 if (oldCountry != newCountry)
                 {
-                    viewModel.ShowCities(oldCountry);
-                    viewModel.ShowCities(newCountry);
+                    viewModel.ShowStates(oldCountry);
+                    viewModel.ShowStates(newCountry);
                     oldCountry = newCountry;
                 }
                 else
                 {
-                    viewModel.ShowCities(newCountry);
+                    viewModel.ShowStates(newCountry);
                     oldCountry = null;
                 }
             }
@@ -60,17 +60,17 @@ namespace AccordionListView
                 await image.RotateTo(180);
                 Grid grid = image.Parent as Grid;
                 Label label = grid.Children[0] as Label;
-                City city = (City)label.BindingContext;
-                if (oldCity != city)
+                State state = (State)label.BindingContext;
+                if (oldState != state)
                 {
-                    viewModel.ShowStates(oldCity);
-                    viewModel.ShowStates(city);
-                    oldCity = city;
+                    viewModel.ShowCities(oldState);
+                    viewModel.ShowCities(state);
+                    oldState = state;
                 }
                 else
                 {
-                    viewModel.ShowStates(city);
-                    oldCity = null;
+                    viewModel.ShowCities(state);
+                    oldState = null;
                 }
             }
         }
