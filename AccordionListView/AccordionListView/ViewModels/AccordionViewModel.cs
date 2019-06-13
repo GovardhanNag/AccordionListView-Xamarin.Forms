@@ -104,8 +104,6 @@ namespace AccordionListView.ViewModels
                     country.ChildrenRowHeightRequest = state.Cities.Count;
                 else
                     country.ChildrenRowHeightRequest = 0;
-                //country.Cities.SingleOrDefault(ci => ci.StateName == city.StateName).IsCChildrenVisible=!city.IsCChildrenVisible;
-                //country.IsChildrenVisible = !country.IsChildrenVisible;
                 Countries.ReportItemChange(country);
             }
         }
